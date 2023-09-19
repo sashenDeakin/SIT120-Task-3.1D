@@ -22,9 +22,7 @@ const submitData = async () => {
 
   const data = await response.json();
 
-  if (data) {
-    alert("Your Message Send Successful");
-  }
+  alert("Your Message Send Successful");
 };
 </script>
 
@@ -93,7 +91,13 @@ const submitData = async () => {
               ></textarea>
             </div>
           </div>
-          <button class="submit-btn" @click="submitData()">Submit</button>
+          <button
+            class="submit-btn"
+            style="cursor: pointer"
+            @click="submitData()"
+          >
+            Submit
+          </button>
         </div>
       </form>
       <div

@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cors());
 
 const connection_Url =
-  "mongodb+srv://sashen:0scxgm7IQuGB6D6z@nodeapp.pwxl3.mongodb.net/news-app";
+  "mongodb+srv://sashenjayathilaka95:KOp3YDfJbgXfqyOy@cluster0.dbvlvaf.mongodb.net/news-app";
 
 mongoose
   .connect(connection_Url, {

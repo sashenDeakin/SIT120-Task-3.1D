@@ -1,15 +1,44 @@
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+
+const name = ref("");
+const email = ref("");
+const number = ref("");
+const message = ref("");
+
+const submitData = async () => {
+  const response = await fetch(`http://localhost:3001/save/message`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name: name.value,
+      email: email.value,
+      number: number.value,
+      message: message.value,
+    }),
+  });
+
+  const data = await response.json();
+
+  if (data) {
+    alert("Your Message Send Successful");
+  }
+};
+</script>
 
 <template>
-  <div class="contact_us_6">
+  <div class="contact_us_6" id="#app">
     <div class="responsive-container-block container">
       <form class="form-box">
         <div class="container-block form-wrapper">
           <div class="mob-text">
             <p class="text-blk contactus-head">Get in Touch</p>
             <p class="text-blk contactus-subhead">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis
-              diam lectus sapien.
+              Thank you for reaching out to us. We value your feedback,
+              inquiries, and suggestions. Please use the form below to get in
+              touch with us, and we will respond as soon as possible.
             </p>
           </div>
           <div class="responsive-container-block" id="i2cbk">
@@ -20,9 +49,10 @@
               <p class="text-blk input-title">FIRST NAME</p>
               <input
                 class="input"
-                id="ijowk-3"
+                id="name"
                 name="FirstName"
                 placeholder="Please enter first name..."
+                v-model="name"
               />
             </div>
             <div
@@ -35,6 +65,7 @@
                 id="ipmgh-3"
                 name="Email"
                 placeholder="Please enter email..."
+                v-model="email"
               />
             </div>
             <div
@@ -47,6 +78,7 @@
                 id="imgis-3"
                 name="PhoneNumber"
                 placeholder="Please enter phone number..."
+                v-model="number"
               />
             </div>
             <div
@@ -56,12 +88,12 @@
               <p class="text-blk input-title">WHAT DO YOU HAVE IN MIND ?</p>
               <textarea
                 class="textinput"
-                id="i5vyy-3"
                 placeholder="Please enter query..."
+                v-model="message"
               ></textarea>
             </div>
           </div>
-          <button class="submit-btn" id="w-c-s-bgc_p-1-dm-id-2">Submit</button>
+          <button class="submit-btn" @click="submitData()">Submit</button>
         </div>
       </form>
       <div
@@ -73,8 +105,9 @@
             Reach us at
           </p>
           <p class="text-blk map-contactus-subhead">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis diam
-            lectus sapien.
+            Thank you for reaching out to us. We value your feedback, inquiries,
+            and suggestions. Please use the form below to get in touch with us,
+            and we will respond as soon as possible.
           </p>
           <div class="social-media-links mob">
             <a class="social-icon-link" href="#" id="ix94i-2-2">

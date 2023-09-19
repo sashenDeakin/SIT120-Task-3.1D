@@ -10,4 +10,11 @@ import Header from "../components/Header.vue";
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.wrapper {
+  width: fit-content;
+  margin: auto auto;
+  text-align: left;
+  padding: 0 7px;
+}
+</style>

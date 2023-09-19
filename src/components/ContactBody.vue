@@ -27,7 +27,7 @@ const submitData = async () => {
 </script>
 
 <template>
-  <div class="contact_us_6" id="#app">
+  <div class="contact_us_6">
     <div class="responsive-container-block container">
       <form class="form-box">
         <div class="container-block form-wrapper">
